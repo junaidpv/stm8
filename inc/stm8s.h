@@ -34,6 +34,16 @@
 #define PD_CR1                  _SFR_(0x12)
 #define PD_CR2                  _SFR_(0x13)
 
+#define PB0 0
+#define PB1 1
+#define PB2 2
+#define PB3 3
+#define PB4 4
+#define PB5 5
+#define PB6 6
+#define PB7 7
+
+
 /* PORT E */
 #define PE_ODR                  _SFR_(0x14)
 #define PE_IDR                  _SFR_(0x15)
@@ -210,6 +220,16 @@
 #define UART2_CR6               _SFR_(0x249)
 #define UART2_GTR               _SFR_(0x24A)
 #define UART2_PSCR              _SFR_(0x24B)
+
+/* TIM2 */
+#define TIM2_CR1          *(uint8_t*)0x5300  // Control register 1
+#define TIM2_EGR          *(uint8_t*)0x5306  // Event generation register
+#define TIM2_CNTRH        *(uint8_t*)0x530C
+#define TIM2_CNTRL        *(uint8_t*)0x530D
+#define TIM2_PSCR         *(uint8_t*)0x530E
+
+#define TIM2_CR1_CEN      0  // Counter enable bit (0 - disable, 1 - enable)
+#define TIM2_EGR_UG       0
 
 /* TIM4 */
 #define TIM4_CR1                _SFR_(0x340)
