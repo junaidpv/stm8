@@ -16,7 +16,7 @@ void main() {
     enable_interrupts();
 
     PB_DDR |= 1 << PB5; // 0x00001000 PB5 is now output
-  	PB_CR1 |= 1 << PB5; // 0x00001000 PB5 is now pushpull
+    PB_CR1 |= 1 << PB5; // 0x00001000 PB5 is now pushpull
 
     TIM2_PSCR = 0b00000111; //  Prescaler = 128
     // Fill auto reload registers.
