@@ -20,6 +20,15 @@
 #define PB_CR1                  _SFR_(0x08)
 #define PB_CR2                  _SFR_(0x09)
 
+#define PB0 0
+#define PB1 1
+#define PB2 2
+#define PB3 3
+#define PB4 4
+#define PB5 5
+#define PB6 6
+#define PB7 7
+
 /* PORT C */
 #define PC_ODR                  _SFR_(0x0A)
 #define PC_IDR                  _SFR_(0x0B)
@@ -33,15 +42,6 @@
 #define PD_DDR                  _SFR_(0x11)
 #define PD_CR1                  _SFR_(0x12)
 #define PD_CR2                  _SFR_(0x13)
-
-#define PB0 0
-#define PB1 1
-#define PB2 2
-#define PB3 3
-#define PB4 4
-#define PB5 5
-#define PB6 6
-#define PB7 7
 
 
 /* PORT E */
@@ -223,13 +223,21 @@
 
 /* TIM2 */
 #define TIM2_CR1          *(uint8_t*)0x5300  // Control register 1
+#define TIM2_IER          *(uint8_t*)0x5303  // Interrupt enable register
+#define TIM2_SR1          *(uint8_t*)0x5304  // Status register 1
+#define TIM2_SR2          *(uint8_t*)0x5305  // Status register 2
 #define TIM2_EGR          *(uint8_t*)0x5306  // Event generation register
 #define TIM2_CNTRH        *(uint8_t*)0x530C
 #define TIM2_CNTRL        *(uint8_t*)0x530D
 #define TIM2_PSCR         *(uint8_t*)0x530E
+#define TIM2_ARRH         *(uint8_t*)0x530F // Auto reload register high
+#define TIM2_ARRL         *(uint8_t*)0x5310 // Auto reload register high
 
+#define TIM2_CR1_ARPE     7  // Auto-reload preload enable
 #define TIM2_CR1_CEN      0  // Counter enable bit (0 - disable, 1 - enable)
 #define TIM2_EGR_UG       0
+#define TIM2_SR1_UIF      0 // Update Interrupt flag bit
+#define TIM2_IER_UIE      0 // Update interrupt enable bit
 
 /* TIM4 */
 #define TIM4_CR1                _SFR_(0x340)
