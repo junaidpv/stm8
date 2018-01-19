@@ -1,7 +1,11 @@
 #include <stdint.h>
 #include <stm8s.h>
 
-const uint16_t reload_value = 49910;
+// Default system clock will be 2MHz.
+// We set 128 as prescaler, then each tick of timer 2 will be in 64 micro seconds.
+// So, timer will generate overflow interrupt in each second,
+// when counter reaches at 15625 (1S/64uS) which is set in auto reload register.
+const uint16_t reload_value = 15625;
 
 void timer_isr() __interrupt(TIM2_OVF_ISR) {
     PB_ODR ^= 1 << PB5; // Toggle PB5 output
@@ -20,14 +24,7 @@ void main() {
     TIM2_ARRL = reload_value & 0x00FF;
 
     TIM2_IER |= (1 << TIM2_IER_UIE); // Enable Update Interrupt
-    //TIM2_CR1 |= (1 << TIM2_CR1_ARPE); //
-
-    TIM2_EGR |= (1 << TIM2_EGR_UG); // Generate an update event so prescaler value will be taken into account.
-
     TIM2_CR1 |= (1 << TIM2_CR1_CEN); // Enable TIM2
-
-
-    TIM2_SR1 &= ~(1 << TIM2_SR1_UIF); // Clear interrupt flag
 
     while (1) {
         // do nothing
