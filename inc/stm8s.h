@@ -234,6 +234,7 @@
 #define TIM2_ARRL         *(uint8_t*)0x5310 // Auto reload register high
 
 #define TIM2_CR1_ARPE     7  // Auto-reload preload enable
+#define TIM2_CR1_OPM      3  // One pulse mode
 #define TIM2_CR1_CEN      0  // Counter enable bit (0 - disable, 1 - enable)
 #define TIM2_EGR_UG       0
 #define TIM2_SR1_UIF      0 // Update Interrupt flag bit
