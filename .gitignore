@@ -1,0 +1,16 @@
+src/*.asm
+src/*.lst
+src/*.rel
+src/*.rst
+src/*.sym
+
+examples/**/*.cdb
+examples/**/*.ihx
+examples/**/*.ihx.bin
+examples/**/*.lk
+examples/**/*.lst
+examples/**/*.asm
+examples/**/*.sym
+examples/**/*.map
+examples/**/*.rel
+examples/**/*.rst
