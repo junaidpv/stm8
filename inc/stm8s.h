@@ -227,6 +227,12 @@
 #define TIM2_SR1          *(uint8_t*)0x5304  // Status register 1
 #define TIM2_SR2          *(uint8_t*)0x5305  // Status register 2
 #define TIM2_EGR          *(uint8_t*)0x5306  // Event generation register
+#define TIM2_CCMR1        *(uint8_t*)0x5307  // Capture/compare mod register 1
+#define TIM2_CCMR2        *(uint8_t*)0x5308  // Capture/compare mod register 2
+#define TIM2_CCER1        *(uint8_t*)0x530A  // Capture compare enable register 1
+#define TIM2_CCER2        *(uint8_t*)0x530B  // Capture compare enable register 2
+#define TIM2_CCR1H        *(uint8_t*)0x5311  // Capture compare register 1 high
+#define TIM2_CCR1L        *(uint8_t*)0x5312  // Capture compare register 1 low
 #define TIM2_CNTRH        *(uint8_t*)0x530C
 #define TIM2_CNTRL        *(uint8_t*)0x530D
 #define TIM2_PSCR         *(uint8_t*)0x530E
@@ -239,6 +245,8 @@
 #define TIM2_EGR_UG       0
 #define TIM2_SR1_UIF      0 // Update Interrupt flag bit
 #define TIM2_IER_UIE      0 // Update interrupt enable bit
+#define TIM2_CCER1_CC1P   1 // Capture/compare 1 output polarity
+#define TIM2_CCER1_CC1E   0 // Capture/compare 1 output enable
 
 /* TIM4 */
 #define TIM4_CR1                _SFR_(0x340)
