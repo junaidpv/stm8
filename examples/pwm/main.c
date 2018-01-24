@@ -12,9 +12,13 @@ int main() {
 
   TIM2_PSCR = 0x00; // Prescaler = 1
 
+  // Fill 16 bit timer2_arr to two 8 bit registers.
+  // MSB register to be filled first.
   TIM2_ARRH = timer2_arr >> 8;
   TIM2_ARRL = timer2_arr & 0x00FF;
 
+  // Fill 16 bit timer2_ccr1 to two 8 bit registers.
+  // MSB register to be filled first.
   TIM2_CCR1H = timer2_ccr1 >> 8;
   TIM2_CCR1L = timer2_ccr1 & 0x00FF;
 
