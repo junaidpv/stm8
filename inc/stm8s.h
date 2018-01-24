@@ -258,9 +258,12 @@
 #define TIM4_SR                 _SFR_(0x344)
 #define TIM4_SR_UIF             0
 #define TIM4_EGR                _SFR_(0x345)
+#define TIM4_EGR_UG             0
 #define TIM4_CNTR               _SFR_(0x346)
 #define TIM4_PSCR               _SFR_(0x347)
 #define TIM4_ARR                _SFR_(0x348)
+
+#define TIM4_SR_UIF             0 // Update interrupt flag bit
 
 /* ADC1 */
 #define ADC1_DB0R               _SFR_(0x3E0)
